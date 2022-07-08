@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ['0.0.0.0',
 # Application definition
 
 INSTALLED_APPS = [
-    'issues',
+    'issues.apps.IssuesConfig',
     'authuser',
     'django.contrib.admin',
     'django.contrib.auth',

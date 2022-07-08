@@ -49,7 +49,7 @@ class Project(SoftDeleteModel):
   actual_end = models.DateField('Actual end date', null=True, blank=True)
   created_on = models.DateField('Creation date', auto_now_add=True)
   created_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.PROTECT)
-  assigned_to = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL, related_name='project_owner')
+  assigned_to = models.ForeignKey('Profile', null=True, blank=True, on_delete=models.SET_NULL, related_name='project_owner')
   # history = HistoricalRecords()
 
   def __str__(self):
@@ -68,7 +68,7 @@ class Profile(SoftDeleteModel):
   user = models.OneToOneField(User, on_delete=models.PROTECT, blank=True)
 
   def __str__(self):
-    return self.user.username
+    return self.user.email
 
   class Meta:
     verbose_name = 'Person'
