@@ -29,7 +29,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0',
-                 'dtu-tracker.herokuapp.com']
+                 'dtutracker.herokuapp.com']
 
 
 # Application definition
